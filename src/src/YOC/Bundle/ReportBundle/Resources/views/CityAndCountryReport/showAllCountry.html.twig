@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block name %}Country List{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for oCountry in oCountries %}
+        <tr>
+            <th scope="row">{{ oCountry.Id }}</th>
+            <td>{{ oCountry.countryCode | upper }}</td>
+            <td>{{ oCountry.countryName }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

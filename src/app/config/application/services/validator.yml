@@ -1,0 +1,8 @@
+services:
+
+    validator.countryandcity:
+        class: YOC\Validator\CountryAndCityValidator
+        calls:
+            - method: setContainer
+              arguments:
+                  - '@service_container'

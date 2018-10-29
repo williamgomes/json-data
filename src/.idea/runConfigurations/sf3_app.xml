@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="sf3.app" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" singleton="true" server_name="william.dev">
+    <method />
+  </configuration>
+</component>

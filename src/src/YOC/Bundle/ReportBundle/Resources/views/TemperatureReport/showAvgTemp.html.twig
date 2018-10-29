@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block name %}Average Temperature List{% endblock %}
+
+{% block body %}
+    {{ dump(oCountries) }}
+    {#<table class="table">#}
+        {#<thead class="thead-dark">#}
+        {#<tr>#}
+            {#<th scope="col">#</th>#}
+            {#<th scope="col">Country ID</th>#}
+            {#<th scope="col">City Name</th>#}
+        {#</tr>#}
+        {#</thead>#}
+        {#<tbody>#}
+        {#{% for oCity in oCities %}#}
+            {#<tr>#}
+                {#<th scope="row">{{ oCity.Id }}</th>#}
+                {#<td>{{ oCity.countryId }}</td>#}
+                {#<td>{{ oCity.cityName }}</td>#}
+            {#</tr>#}
+        {#{% endfor %}#}
+        {#</tbody>#}
+    {#</table>#}
+{% endblock %}

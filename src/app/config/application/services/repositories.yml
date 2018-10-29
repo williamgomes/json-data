@@ -1,0 +1,6 @@
+services:
+
+    YOC\Entity\Repository\:
+        factory: 'Doctrine\ORM\EntityManagerInterface:getRepository'
+        arguments:
+            - AppBundle\Entity\GroupEntity

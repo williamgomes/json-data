@@ -1,0 +1,20 @@
+imports:
+    - resource: application/services/validator.yml
+parameters: null
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    YOC\Command\FetchJsonDataCommand:
+        tags:
+            - {name: console.command, command: 'yoc:fetch:json-data'}
+
+    YOC\Model\AbstractModel:
+        abstract: true
+        calls:
+            - method: setContainer
+              arguments:
+                  - '@service_container'
+

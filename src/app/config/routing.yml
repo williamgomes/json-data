@@ -1,0 +1,10 @@
+report:
+    resource: "@ReportBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+no_work:
+    resource: "@NoWorkBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
