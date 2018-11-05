@@ -26,16 +26,15 @@ class UniqueResultValidator extends AbstractYocValidator
      */
     public function validate($params = array())
     {
-        $iCountryId = $params['country_id'];
-        $iCityId = $params['city_id'];
-        $sRecordDate = $params['record_date'];
-
-        $oRecordDate = \DateTime::createFromFormat('Y-m-d', $sRecordDate);
+//        var_dump($params); exit();
+        $iCountry = $params['country'];
+        $iCity = $params['city'];
+        $oRecordDate = $params['record_date'];
 
         //check if weather record exist
         $oExistWeatherRecord = $this->getObjectManager()->getRepository(WeatherRecord::class)->findOneBy(array(
-            'countryId' => $iCountryId,
-            'cityId' => $iCityId,
+            'country' => $iCountry,
+            'city' => $iCity,
             'recordDate' => $oRecordDate
         ));
 

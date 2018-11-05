@@ -84,16 +84,14 @@ class FetchJsonDataCommand extends AbstractCommand
 
                             $oRecordDate = \DateTime::createFromFormat('Y-m-d', $oWeather['data'][0]['datetime']);
 
-                            //check if weather record exist
-                            $oExistWeatherRecord = $this->getObjectManager()->getRepository(WeatherRecord::class)->findOneBy(array(
-                                'countryId' => $oCountry->getId(),
-                                'cityId' => $oCity->getId(),
-                                'recordDate' => $oRecordDate
-                            ));
-
                             $oUniqueResultValidator = new UniqueResultValidator($this->getContainer());
+                            $aParams = array(
+                                'country' => $oCountry,
+                                'city' => $oCity,
+                                'record_date' => $oRecordDate
+                            );
 
-                            if ($oUniqueResultValidator->validate()) {
+                            if ($oUniqueResultValidator->validate($aParams)) {
                                 $oWeatherRecord = new WeatherRecord();
 
                                 $oWeatherRecord->setTimezone($oWeather['timezone']);
