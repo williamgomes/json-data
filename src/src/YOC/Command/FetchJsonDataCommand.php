@@ -12,6 +12,7 @@ use YOC\Entity\WeatherRecord;
 use YOC\Model\AbstractCommand;
 use YOC\Provider\DataProvider\ApiDataProvider;
 use YOC\Validator\CountryAndCityValidator;
+use YOC\Validator\UniqueResultValidator;
 
 /**
  * Class FetchJsonDataCommand
@@ -90,7 +91,9 @@ class FetchJsonDataCommand extends AbstractCommand
                                 'recordDate' => $oRecordDate
                             ));
 
-                            if (empty($oExistWeatherRecord)) {
+                            $oUniqueResultValidator = new UniqueResultValidator($this->getContainer());
+
+                            if ($oUniqueResultValidator->validate()) {
                                 $oWeatherRecord = new WeatherRecord();
 
                                 $oWeatherRecord->setTimezone($oWeather['timezone']);
