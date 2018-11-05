@@ -26,7 +26,6 @@ class UniqueResultValidator extends AbstractYocValidator
      */
     public function validate($params = array())
     {
-//        var_dump($params); exit();
         $iCountry = $params['country'];
         $iCity = $params['city'];
         $oRecordDate = $params['record_date'];
