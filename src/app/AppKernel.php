@@ -20,6 +20,9 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new YOC\Bundle\NoWorkBundle\NoWorkBundle(),
             new YOC\Bundle\ReportBundle\ReportBundle(),
+
+            //doctrine migration bundle
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

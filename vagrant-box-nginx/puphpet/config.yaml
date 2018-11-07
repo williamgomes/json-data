@@ -41,8 +41,8 @@ vagrantfile:
                     - '--hiera_config /opt/puphpet/puppet/hiera.yaml'
         synced_folder:
             folder1:
-                owner: www-user
-                group: www-user
+                owner: www-data
+                group: www-data
                 source: ../src
                 target: /var/www
                 sync_type: default

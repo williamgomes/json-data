@@ -95,8 +95,8 @@ class FetchJsonDataCommand extends AbstractCommand
                                 $oWeatherRecord = new WeatherRecord();
 
                                 $oWeatherRecord->setTimezone($oWeather['timezone']);
-                                $oWeatherRecord->setCountryId($oCountry->getId());
-                                $oWeatherRecord->setCityId($oCity->getId());
+                                $oWeatherRecord->setCountry($oCountry);
+                                $oWeatherRecord->setCity($oCity);
                                 $oWeatherRecord->setRecordDate($oRecordDate);
                                 $oWeatherRecord->setMaxTemp($oWeather['data'][0]['max_temp']);
                                 $oWeatherRecord->setMinTemp($oWeather['data'][0]['min_temp']);
